@@ -1,0 +1,93 @@
+### 💡 Project Description
+
+Build a fully functional **Personal Finance Tracker API** that lets users:
+
+- Track their income and expenses
+- Organize transactions into categories
+- Upload profile pictures
+- View monthly summaries
+- Protect their data with JWT authentication
+
+Think of it like building the backend for something like **PocketGuard**, **YNAB**, or **Wallet App** — but from scratch.
+## 🧩 Features to Build
+
+### ✅ User Auth
+
+- Register (`/auth/register`)
+- Login (`/auth/login`)
+- Profile (`/auth/profile`)
+- JWT + bcrypt
+- Role field: `user` | `admin`
+### ✅ Transactions
+
+- `POST /transactions` – Add new income/expense
+- `GET /transactions` – List all transactions
+- `GET /transactions/monthly-summary` – Total spent/earned per category
+- `PUT /transactions/:id` – Edit
+- `DELETE /transactions/:id` – Remove
+
+Each transaction has:
+{
+  "title": "Groceries",
+  "amount": -50,
+  "type": "expense",
+  "category": "Food",
+  "date": "2025-05-27"
+}
+### ✅ Categories
+
+- `GET /categories` – List predefined categories
+- Custom categories optional
+
+---
+
+### ✅ File Upload
+
+- `POST /upload/profile-picture`
+- Upload to Cloudinary using `multer.memoryStorage()`
+### ✅ Admin Route (Bonus)
+
+- `GET /admin/overview` – Only for admin users
+- Returns total users, top spending categories, etc.
+
+---
+
+### ✅ Middleware & Security
+
+- Logger
+- Zod validation
+- 404 + global error handler
+- CORS, Helmet, Rate Limiting
+
+## 📘 Swagger Docs
+
+- `/docs` using `swagger-ui-express`
+- Document every endpoint
+- Use `bearerAuth` security
+- Group by tags: `[Auth]`, `[Transactions]`, `[Upload]`, `[Admin]`
+
+---
+
+## 🚀 Deployment
+
+- Deploy to **Render**
+- Store secrets in Render Dashboard
+- Add your Render URL to Swagger `servers`
+🧪 What to Submit
+| Item | Requirement |
+| --- | --- |
+| ✅ GitHub Repo | With full project code |
+| ✅ Live Render API | With `/docs` live |
+| ✅ Screenshot or Loom | Show usage of at least 5 endpoints |
+| ✅ Optional Frontend | (React, Postman, or HTML form test) |
+
+Je vois le problème! Sur la droite, il montre "sammed384 - 1 repo" - cela signifie que Render n'a accès qu'à 1 seul repo de votre compte GitHub, et ce n'est pas Dugsiye_NodeJs_Exercises.
+
+Solution:
+Cliquez sur "sammed384 1 repo" (sur la droite)
+Cela va ouvrir les paramètres GitHub
+Cliquez sur "Configure" ou "Install & Authorize"
+Changez de "Only select repositories" → "All repositories" OU ajoutez spécifiquement Dugsiye_NodeJs_Exercises à la liste
+Cliquez "Save"
+Revenez sur Render et rafraîchissez la page
+Le repo devrait maintenant apparaître dans la recherche.
